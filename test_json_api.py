@@ -51,3 +51,48 @@ def test_get_comments_on_post():
     post_url = main_url + '/posts/1/comments'
     r = requests.get(post_url)
     assert r.status_code == 200
+
+def test_get_page_of_albums():
+    '''
+    Get albums on given page
+    :return:
+    '''
+    post_url = main_url + '/albums?_page=7'
+    r = requests.get(post_url)
+    assert r.status_code == 200
+
+def test_get_page_of_photos():
+    '''
+    Get photos on given page
+    :return:
+    '''
+    post_url = main_url + '/photos?_page=7'
+    r = requests.get(post_url)
+    assert r.status_code == 200
+
+def test_get_page_of_users():
+    '''
+    Get users on given page
+    :return:
+    '''
+    post_url = main_url + '/users?_page=7'
+    r = requests.get(post_url)
+    assert r.status_code == 200
+
+def test_get_one_todo():
+    '''
+    Get one todo
+    :return:
+    '''
+    post_url = main_url + '/todos/1'
+    r = requests.get(post_url)
+    assert r.status_code == 200
+
+def test_get_page_of_todos():
+    '''
+    Get todos on given page
+    :return:
+    '''
+    post_url = main_url + '/todos?_page=7'
+    r = requests.get(post_url)
+    assert r.status_code == 200
