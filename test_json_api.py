@@ -38,6 +38,9 @@ def test_get_slice_of_posts():
     '''
     post_url = main_url + '/posts?_start=20&_end=30'
     r = requests.get(post_url)
+    data = r.json()
+    assert data[0]['id'] == 21
+    assert data[-1]['id'] == 30
     assert r.status_code == 200
 
 def test_get_comments_on_post():
