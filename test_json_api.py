@@ -1,6 +1,12 @@
 import requests
 from nose.tools import nottest
-main_url = 'http://localhost:3000'
+from ConfigParser import ConfigParser
+
+test_suite_config = ConfigParser()
+test_suite_config.read('./test_suite.ini')
+
+main_url = test_suite_config.get('api_settings', 'url')
+post_url = main_url + '/posts'
 
 def test_get_one_post():
     '''
