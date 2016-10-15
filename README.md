@@ -5,9 +5,19 @@
 * Start the api with 'json-server --watch  data.json'
 * Test if you are able to hit the server at http://localhost:3000
 
-## Hitting the API with tests
-* nosetests -sv test_json_api.py  
+## Start Testing
 
-## Running only those tests tagged as smoke tests ('smoke')
-* nosetests -a smoke
+### Set up environment
+* install pip for managing python and its packages
+* Setup a virtual environment for your python using instructions at http://virtualenvwrapper.readthedocs.io/en/latest/install.html
+* mkvirtualenv api_tests
+* workon api_tests
+* pip install -r requirements
+* At this point your environment is all set to run tests.
+
+### Hitting the API with tests
+```nosetests -sv test_json_api.py```
+
+### Running only those tests tagged as smoke tests ('smoke')
+```nosetests -a smoke```
 
